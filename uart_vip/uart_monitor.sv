@@ -57,7 +57,7 @@ class uart_monitor extends uvm_monitor;
 			#baud_period;
 		end
 		// PARITY
-		`uvm_info(get_type_name(), $sformatf("%0d", cnt_HIGH_tx), UVM_LOW);
+//		`uvm_info(get_type_name(), $sformatf("%0d", cnt_HIGH_tx), UVM_LOW);
 		case (cfg.parity_mode)
 			uart_configuration::ODD: begin
 				if (cnt_HIGH_tx % 2 == 0) begin
@@ -125,7 +125,7 @@ class uart_monitor extends uvm_monitor;
 			#baud_period;
 		end
 		// PARITY
-		`uvm_info(get_type_name(), $sformatf("%0d", cnt_HIGH_rx), UVM_LOW);
+//		`uvm_info(get_type_name(), $sformatf("%0d", cnt_HIGH_rx), UVM_LOW);
 		case (cfg.parity_mode)
 			uart_configuration::ODD: begin
 				if (cnt_HIGH_rx % 2 == 0) begin

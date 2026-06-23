@@ -58,7 +58,7 @@ class uart_driver extends uvm_driver #(uart_transaction);
 			#baud_period;
 		end
 		// PARITY
-		`uvm_info(get_type_name(), $sformatf("%0d", cnt_HIGH), UVM_LOW);
+//		`uvm_info(get_type_name(), $sformatf("%0d", cnt_HIGH), UVM_LOW);
 		case (cfg.parity_mode)
 			uart_configuration::ODD: begin
 				if (cnt_HIGH % 2 == 0) begin
@@ -79,9 +79,9 @@ class uart_driver extends uvm_driver #(uart_transaction);
 		endcase	
 		if (cfg.parity_mode != uart_configuration::NONE) begin
 			if (cfg.parity_error == uart_configuration::ERROR) begin
-				$display("------------------------> uart_vif.tx = %1b", uart_vif.tx);
+//				$display("------------------------> uart_vif.tx = %1b", uart_vif.tx);
 				uart_vif.tx = ~uart_vif.tx;
-				$display("------------------------> uart_vif.tx = %1b", uart_vif.tx);
+//				$display("------------------------> uart_vif.tx = %1b", uart_vif.tx);
 			end
 			#baud_period;
 		end
